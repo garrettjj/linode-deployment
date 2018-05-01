@@ -6,5 +6,5 @@
 - Debian 
 
 ## To-Do:
-- *ALL* Include hostname in params
-- *Debian* Unattended updates
+- **ALL** Include hostname in params
+- **Debian** Unattended updates
