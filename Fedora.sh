@@ -3,12 +3,17 @@
 #<UDF name="ssuser" Label="Sudo user username?" example="username" />
 #<UDF name="sspassword" Label="Sudo user password?" example="strongPassword" />
 #<UDF name="sspubkey" Label="SSH pubkey (installed for root and sudo user)?" example="ssh-rsa ..." />
+#<UDF name="sshostname" Label="Fully qualified domain name?" example="example.jansen.sh" />
 #
 # Works for Fedora 27
 
 if [[ ! $SSUSER ]]; then read -p "Sudo user username?" SSUSER; fi
 if [[ ! $SSPASSWORD ]]; then read -p "Sudo user password?" SSPASSWORD; fi
 if [[ ! $SSPUBKEY ]]; then read -p "SSH pubkey (installed for root and sudo user)?" SSPUBKEY; fi
+if [[ ! $SSHOSTNAME ]]; then read -p "Fully qualified domain name?" SSHOSTNAME; fi
+
+# setting fully-qualified domain name
+hostnamectl set-hostname $SSHOSTNAME
 
 # set up sudo user
 echo Setting sudo user: $SSUSER...
